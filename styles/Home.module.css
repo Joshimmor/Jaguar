@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .main {
@@ -113,4 +113,12 @@
     width: 100%;
     flex-direction: column;
   }
+}
+.scene{
+  width:100%;
+  height:100vh;
+}
+
+.canvas{
+  background: rgb(255, 255, 255);
 }
