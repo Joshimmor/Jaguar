@@ -1,21 +1,25 @@
-import React, {useRef} from 'react';
+import React, {useRef,useState} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { OrbitControls} from '@react-three/drei';
-import { Canvas, useThree} from '@react-three/fiber';
+import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 import Jaguar  from "../components/Jaguar"
 
-const Controls = () => {
+const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
-
   return (
       <OrbitControls
           args={[camera, gl.domElement]}
           ref={orbitRef}
-      />
+          enableZoom={false}
+          maxDistance={5}
+          minDistance={5}
+          maxPolarAngle={1.25}
+          minPolarAngle={1.25}
+          />
   )
 }
 export default function Home() {
@@ -32,9 +36,19 @@ export default function Home() {
          className={styles.canvas}>
           <Suspense fallback={null}>
           <Controls/>
+          {/* <rectAreaLight
+              width={500}
+              height={500}
+              intensity={1}
+              color="0xFFFFFF"
+              position={[0, 0, -100]}
+              lookAt={[0, 0, 0]}
+              penumbra={2}
+              castShadow
+              /> */}
           <pointLight position={[10, 10, 10]} />
          
-          <Jaguar position={[0,0,0]}
+          <Jaguar position={[-.2,0,0]}
                 rotation={[.2, 0, 0]}/>
    
           </Suspense>
