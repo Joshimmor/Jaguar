@@ -8,7 +8,7 @@ export default function Jaguar({ ...props }) {
     const a = state.clock.getElapsedTime();
     group.current.rotation.y = a/2;
   })
-  const { nodes, materials } = useGLTF("/static/Jaguar.gltf");
+  const { nodes, materials } = useGLTF("/static/Jaguar/Jaguar.gltf");
   return (
     <group ref={group} {...props} dispose={null} scale={.025} >
       <group position={[-5, -25, 66.63]} rotation={[-Math.PI, 0, 0]}>
@@ -19,6 +19,6 @@ export default function Jaguar({ ...props }) {
     </group>
   )
 }
-useGLTF.preload("/static/Jaguar.gltf")
+useGLTF.preload("/static/Jaguar/Jaguar.gltf")
 
 

@@ -6,7 +6,7 @@ import { OrbitControls} from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 import Jaguar  from "../components/Jaguar"
-
+import Forest from '../components/Forest';
 const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
@@ -36,11 +36,16 @@ export default function Home() {
          className={styles.canvas}>
           <Suspense fallback={null}>
           <Controls/>
+          <pointLight position={[-30, 10, -30]} />
           <pointLight position={[10, 10, 10]} />
-          <Jaguar position={[0,0,0]}
+          <pointLight position={[30, 10, 30]} />
+          {/* <Jaguar position={[0,0,0]}
                 rotation={[.2, 0, 0]}
-                />
-   
+                /> */}
+            <Forest
+            position={[0,-6,0]}
+            rotation={[0, -2, 0]}
+            />
           </Suspense>
         </Canvas>
       </main>
