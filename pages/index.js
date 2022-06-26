@@ -36,20 +36,10 @@ export default function Home() {
          className={styles.canvas}>
           <Suspense fallback={null}>
           <Controls/>
-          {/* <rectAreaLight
-              width={500}
-              height={500}
-              intensity={1}
-              color="0xFFFFFF"
-              position={[0, 0, -100]}
-              lookAt={[0, 0, 0]}
-              penumbra={2}
-              castShadow
-              /> */}
           <pointLight position={[10, 10, 10]} />
-         
-          <Jaguar position={[-.2,0,0]}
-                rotation={[.2, 0, 0]}/>
+          <Jaguar position={[0,0,0]}
+                rotation={[.2, 0, 0]}
+                />
    
           </Suspense>
         </Canvas>
