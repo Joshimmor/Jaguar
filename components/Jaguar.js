@@ -6,7 +6,7 @@ export default function Jaguar({ ...props }) {
   const group = useRef();
   useFrame((state) => {
     const a = state.clock.getElapsedTime();
-    group.current.rotation.y = a;
+    group.current.rotation.y = a/2;
   })
   const { nodes, materials } = useGLTF("/static/Jaguar.gltf");
   return (
