@@ -7,6 +7,8 @@ import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 import Jaguar  from "../components/Jaguar"
 import Forest from '../components/Forest';
+import useGyroscope from 'react-hook-gyroscope'
+
 const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
@@ -23,6 +25,7 @@ const Controls = () => {
   )
 }
 export default function Home() {
+  const gyroscope = useGyroscope()
   return (
     <div className={styles.container}>
       <Head>
@@ -32,6 +35,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.scene}>
+        <ul>
+          <li>X: {gyroscope.x}</li>
+          <li>Y: {gyroscope.y}</li>
+          <li>Z: {gyroscope.z}</li>
+        </ul>
         <Canvas
          className={styles.canvas}>
           <Suspense fallback={null}>
