@@ -2,7 +2,7 @@ import React, {useRef,useState} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { OrbitControls} from '@react-three/drei';
+import { OrbitControls,DeviceOrientationControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 import Jaguar  from "../components/Jaguar"
@@ -35,7 +35,8 @@ export default function Home() {
         <Canvas
          className={styles.canvas}>
           <Suspense fallback={null}>
-          <Controls/>
+          {/* <Controls/> */}
+          <DeviceOrientationControls />
           <pointLight position={[-30, 10, -30]} />
           <pointLight position={[10, 10, 10]} />
           <pointLight position={[30, 10, 30]} />
