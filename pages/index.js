@@ -1,13 +1,12 @@
 import React, {useRef,useState} from 'react';
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { OrbitControls,DeviceOrientationControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 import Jaguar  from "../components/Jaguar"
 import Forest from '../components/Forest';
-import useGyroscope from 'react-hook-gyroscope'
+
 
 const Controls = () => { 
   const orbitRef = useRef();
@@ -24,8 +23,14 @@ const Controls = () => {
           />
   )
 }
+function devicePermission() {
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    // Handle iOS 13+ devices.
+    DeviceMotionEvent.requestPermission()
+  } 
+}
 export default function Home() {
-  const gyroscope = useGyroscope()
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -35,12 +40,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.scene}>
-        <ul>
-          <li>X: {gyroscope.x}</li>
-          <li>Y: {gyroscope.y}</li>
-          <li>Z: {gyroscope.z}</li>
-        </ul>
         <Canvas
+        onClick={devicePermission}
          className={styles.canvas}>
           <Suspense fallback={null}>
           {/* <Controls/> */}
