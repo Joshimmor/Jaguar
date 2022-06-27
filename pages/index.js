@@ -26,7 +26,8 @@ const Controls = () => {
 function devicePermission() {
   if (typeof DeviceMotionEvent.requestPermission === 'function') {
     // Handle iOS 13+ devices.
-    DeviceMotionEvent.requestPermission()
+    DeviceMotionEvent.requestPermission();
+    window.location.reload(false);
   } 
 }
 export default function Home() {
