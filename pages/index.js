@@ -24,9 +24,10 @@ const Controls = () => {
   )
 }
 function devicePermission() {
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+  if (typeof DeviceMotionEvent.requestPermission === 'function' && !localStorage.getItem('Motion')) {
     // Handle iOS 13+ devices.
     DeviceMotionEvent.requestPermission();
+    localStorage.setItem("Motion",true)
     window.location.reload(false);
   } 
 }
