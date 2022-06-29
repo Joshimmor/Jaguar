@@ -45,8 +45,8 @@ export default function Home() {
         onClick={devicePermission}
          className={styles.canvas}>
           <Suspense fallback={null}>
-          <Controls/>
-          {/* <DeviceOrientationControls /> */}
+          {/* <Controls/> */}
+          <DeviceOrientationControls /> 
           <pointLight position={[-30, 10, -30]} />
           <pointLight position={[10, 10, 10]} />
           <pointLight position={[30, 10, 30]} />
