@@ -5,7 +5,7 @@ import { OrbitControls,DeviceOrientationControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 // import Jaguar  from "../components/Jaguar"
-import Masks from '../components/Masks';
+import Mask from '../components/Mask';
 
 const Controls = () => { 
   const orbitRef = useRef();
@@ -45,17 +45,17 @@ export default function Home() {
         onClick={devicePermission}
          className={styles.canvas}>
           <Suspense fallback={null}>
-          {/* <Controls/> */}
-          <DeviceOrientationControls />
+          <Controls/>
+          {/* <DeviceOrientationControls /> */}
           <pointLight position={[-30, 10, -30]} />
           <pointLight position={[10, 10, 10]} />
           <pointLight position={[30, 10, 30]} />
           {/* <Jaguar position={[0,0,0]}
                 rotation={[.2, 0, 0]}
                 /> */}
-            <Masks
-            position={[0,-25,0]}
-            rotation={[0, -4.712, 0]}/>
+            <Mask
+            position={[5.5,-35,0]}
+            rotation={[0, 0, 0]}/>
           </Suspense>
         </Canvas>
       </main>

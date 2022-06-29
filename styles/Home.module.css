@@ -120,5 +120,6 @@
 }
 
 .canvas{
-  background: rgb(13, 27, 15);
+  background: rgb(13,27,15);
+background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%);
 }
