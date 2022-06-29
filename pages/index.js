@@ -54,8 +54,8 @@ export default function Home() {
                 rotation={[.2, 0, 0]}
                 /> */}
             <Mask
-            position={[5.5,-35,0]}
-            rotation={[0, 0, 0]}/>
+            position={[0,-25,0]}
+            rotation={[0, Math.PI/2, 0]}/>
           </Suspense>
         </Canvas>
       </main>
