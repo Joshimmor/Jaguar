@@ -4,9 +4,8 @@ import styles from '../styles/Home.module.css'
 import { OrbitControls,DeviceOrientationControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
-import Jaguar  from "../components/Jaguar"
-import Forest from '../components/Forest';
-
+// import Jaguar  from "../components/Jaguar"
+import Masks from '../components/Masks';
 
 const Controls = () => { 
   const orbitRef = useRef();
@@ -24,9 +23,10 @@ const Controls = () => {
   )
 }
 function devicePermission() {
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+  if (typeof DeviceMotionEvent.requestPermission === 'function' && !localStorage.getItem('Motion')) {
     // Handle iOS 13+ devices.
     DeviceMotionEvent.requestPermission();
+    localStorage.setItem("Motion",true)
     window.location.reload(false);
   } 
 }
@@ -53,10 +53,9 @@ export default function Home() {
           {/* <Jaguar position={[0,0,0]}
                 rotation={[.2, 0, 0]}
                 /> */}
-            <Forest
-            position={[0,-6,0]}
-            rotation={[0, -2, 0]}
-            />
+            <Masks
+            position={[0,-25,0]}
+            rotation={[0, -4.712, 0]}/>
           </Suspense>
         </Canvas>
       </main>
