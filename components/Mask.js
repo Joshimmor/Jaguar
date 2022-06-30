@@ -13,26 +13,8 @@ export default function Mask({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('static/Mask/scene.gltf')
   return (
-    <group ref={group} {...props} dispose={null} scale={10} >
-      <group rotation={[-Math.PI / 2, 0,Math.PI / 2]} position={[10,0,0]} scale={4}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} />
-      </group>
-      <group rotation={[-Math.PI / 2, 0,-Math.PI / 2]} position={[-10,0,0]} scale={4}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} />
-      </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} position={[0,0,10]} scale={4}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} />
-      </group>
-      <group rotation={[-Math.PI / 2, 0,Math.PI ]} position={[0,0,10]} scale={4}>
+    <group ref={group} {...props} dispose={null} scale={1} >
+      <group rotation={[0,-Math.PI,0]} position={[0,0,0]} scale={3}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
         <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
