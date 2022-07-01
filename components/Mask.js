@@ -6,20 +6,33 @@ source: https://sketchfab.com/3d-models/japanese-mask-9a3972e41f4646129245c6acd5
 title: Japanese Mask
 */
 
-import React, { useRef } from 'react'
+import React, { useRef,useState } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useSpring } from "@react-spring/core";
+import { a } from "@react-spring/three";
+import { useFrame } from '@react-three/fiber';
 
 export default function Mask({ ...props }) {
-  const group = useRef()
-  const { nodes, materials } = useGLTF('static/Mask/scene.gltf')
+  let mask = useRef();
+  let [Rotation,setRotation] = useState(1);
+  const changeRotation = () =>{
+    setRotation(Number(!Rotation))
+    console.log(Rotation,spring.z)
+  }
+  const { nodes, materials } = useGLTF('static/Mask/scene.gltf');
+  const  spring  = useSpring({
+    z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI]
+  });
+ 
+
   return (
-    <group ref={group} {...props} dispose={null} scale={1} >
-      <group rotation={[0,-Math.PI,0]} position={[0,0,0]} scale={3}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
+    <group  rotateZ={spring.z}  dispose={null} scale={2} >
+      <a.group onClick={changeRotation}  rotation={spring.z} position={[0,0,0]} scale={2}>
+        <mesh  geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
         <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} />
-      </group>
+      </a.group>
     </group>
   )
 }

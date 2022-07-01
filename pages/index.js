@@ -11,18 +11,16 @@ const Controls = () => {
   const orbitRef = useRef();
   const {camera, gl} = useThree();
   return (
-      //<OrbitControls
-          // args={[camera, gl.domElement]}
-          // ref={orbitRef}
-          // enableZoom={false}
-          // maxDistance={5}
-          // minDistance={5}
-          // maxAzimuthAngle={1}
-          // maxPolarAngle={1}
-          // />
-      <DeviceOrientationControls
-   
-      />
+      <OrbitControls
+          args={[camera, gl.domElement]}
+          ref={orbitRef}
+          minDistance={10}
+          maxDistance={10}
+          maxAzimuthAngle={.105}
+          minAzimuthAngle={-.105}
+          maxPolarAngle={1.75}
+          minPolarAngle={1.4}
+          />
   )
 }
 function devicePermission() {
@@ -34,7 +32,7 @@ function devicePermission() {
   } 
 }
 export default function Home() {
- 
+
   return (
     <div className={styles.container}>
       <Head>
@@ -45,10 +43,11 @@ export default function Home() {
 
       <main className={styles.scene}>
         <Canvas
-        onClick={devicePermission}
+      
          className={styles.canvas}>
           <Suspense fallback={null}>
           <Controls/>
+          {/* <DeviceOrientationControls/> */}
           <pointLight position={[-30, 10, -30]} />
           <pointLight position={[10, 10, 10]} />
           <pointLight position={[30, 10, 30]} />
