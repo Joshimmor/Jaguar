@@ -117,9 +117,12 @@
 .scene{
   width:100%;
   height:100vh;
+  background: rgb(0, 0, 0)
 }
 
 .canvas{
-  /* background: rgb(13,27,15);
-background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%); */
+  background-image: url("./Assets/MAYAN.png");
+  background-size: 70%;
+ /* background: rgba(13, 27, 15, 0.285); */
+/* background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%); */ 
 }
