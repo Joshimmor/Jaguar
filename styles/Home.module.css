@@ -117,12 +117,12 @@
 .scene{
   width:100%;
   height:100vh;
-  background: rgb(0, 0, 0)
+  background: rgb(157, 205, 233)
 }
 
 .canvas{
-  background-image: url("./Assets/MAYAN.png");
-  background-size: 70%;
+  background-image: url("./Assets/Four Moons.jpg");
+  background-size: 75%;
  /* background: rgba(13, 27, 15, 0.285); */
 /* background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%); */ 
 }
