@@ -9,21 +9,10 @@
   height:100vh;
   padding: 0;
   margin:0;
-  background: rgb(114,152,173);
-background: linear-gradient(360deg, rgb(89, 119, 135) 13%, rgba(157,205,233,1) 64%);
+  background-image: url('../styles/Assets/3.jpg');
+  
 }
-.dot{
-  border-radius: 50%;
-  height: 70vh;
-  width: 70vh;
-  background-color: rgb(200, 130, 1);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -webkit-box-shadow: 5px 5px 11px 6px rgba(0,0,0,0.19); 
-box-shadow: 5px 5px 11px 6px rgba(0,0,0,0.19);
-}
+
 .canvas{
  /* background: rgba(13, 27, 15, 0.285); */
 /* background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%); */ 

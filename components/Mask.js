@@ -21,7 +21,8 @@ export default function Mask({ ...props }) {
   }
   const { nodes, materials } = useGLTF('static/Mask/scene.gltf');
   const  spring  = useSpring({
-    z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI]
+    z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI],
+    config:{ mass: .85, tension: 190, friction: 10 }
   });
  
 

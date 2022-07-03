@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
       <div className={styles.scene}>
-        <div className={styles.dot}></div>
+   
         <Canvas
       
          className={styles.canvas}>
