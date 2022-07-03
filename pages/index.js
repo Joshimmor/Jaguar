@@ -6,6 +6,7 @@ import { Canvas, useFrame, useThree} from '@react-three/fiber';
 import { Suspense } from 'react';
 // import Jaguar  from "../components/Jaguar"
 import Mask from '../components/Mask';
+import Loader from "../components/loader"
 
 const Controls = () => { 
   const orbitRef = useRef();
@@ -35,24 +36,20 @@ export default function Home() {
 
   return (
       <div className={styles.scene}>
-   
-        <Canvas
-      
-         className={styles.canvas}>
-          <Suspense fallback={null}>
-          <Controls/>
-          {/* <DeviceOrientationControls/> */}
-          <pointLight position={[-30, 10, -30]} />
-          <pointLight position={[10, 10, 10]} />
-          <pointLight position={[30, 10, 30]} />
-          {/* <Jaguar position={[0,0,0]}
-                rotation={[.2, 0, 0]}
-                /> */}
-            <Mask
-            position={[0,0,0]}
-            rotation={[0,0,0]}/>
+          <Suspense fallback={<Loader/>}>
+            <Canvas
+        className={styles.canvas}>
+              <Controls/>
+              {/* <DeviceOrientationControls/> */}
+              <pointLight position={[-30, 10, -30]} />
+              <pointLight position={[10, 10, 10]} />
+              <pointLight position={[30, 10, 30]} />
+              <Mask
+                position={[0,0,0]}
+                rotation={[0,0,0]}
+              />
+            </Canvas>
           </Suspense>
-        </Canvas>
       </div>
   )
 }
