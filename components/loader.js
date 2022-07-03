@@ -7,14 +7,14 @@ function Loader(props) {
         margin: "auto",
         background: "0 0"
       }}
-      width="44px"
-      height="44px"
+      width="100vw"
+      height="100vh"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
       display="block"
       {...props}
     >
-      <circle cx={30} cy={50} fill="#e76a24" r={20}>
+      <circle cx={30} cy={50} fill="#e76a24" r={5}>
         <animate
           attributeName="cx"
           repeatCount="indefinite"
@@ -24,7 +24,7 @@ function Loader(props) {
           begin="-0.7692307692307692s"
         />
       </circle>
-      <circle cx={70} cy={50} fill="#fbbc42" r={20}>
+      <circle cx={70} cy={50} fill="#fbbc42" r={5}>
         <animate
           attributeName="cx"
           repeatCount="indefinite"
@@ -34,7 +34,7 @@ function Loader(props) {
           begin="0s"
         />
       </circle>
-      <circle cx={30} cy={50} fill="#e76a24" r={20}>
+      <circle cx={30} cy={50} fill="#e76a24" r={5}>
         <animate
           attributeName="cx"
           repeatCount="indefinite"
