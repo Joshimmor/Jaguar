@@ -3,7 +3,7 @@ import styles from"../styles/Layout.module.css"
 import Link from 'next/link'
 export default function Layout({ children }) {
   return (
-    <>
+    <div className={styles.background}>
      <div className={styles.Header}>
         <Link href='/about'>
             <a  className={styles.HeaderLinks}>
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
             </a>
             </Link>
      </div>
-      <main>{children}</main>
+      <main className={styles.content}>{children}</main>
       <div  className={styles.Footer}>
         <Link  href='/media'>
             <a className={styles.FooterLinks}>
@@ -29,6 +29,6 @@ export default function Layout({ children }) {
             </a>
             </Link>
      </div>
-    </>
+    </div>
   )
 }

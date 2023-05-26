@@ -3,17 +3,26 @@
   margin: 0;
 
 }
-
 .scene{
   width:100vw;
   height:100vh;
   padding: 0;
-  margin:0;
-  background-image: url('../styles/Assets/3.jpg');
-  
+  margin:0 auto;
+
+  position: absolute;
+}
+@media (max-width < 600) {
+  .scene{
+    width:100vw;
+    height:100vh;
+    padding: 0;
+    margin:0 auto;
+    top: 7%;
+    position: absolute;
+  }
 }
 
+
 .canvas{
- /* background: rgba(13, 27, 15, 0.285); */
-/* background: radial-gradient(circle, rgba(13,27,15,1) 0%, rgba(0,0,0,1) 70%); */ 
+ z-index: 6;
 }

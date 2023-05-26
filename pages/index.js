@@ -7,7 +7,8 @@ import { Suspense } from 'react';
 // import Jaguar  from "../components/Jaguar"
 import Mask from '../components/Mask';
 import Loader from "../components/loader"
-
+import SelectionBar from '../components/selectionBar';
+import { Album } from '../components/Album_cover';
 const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
@@ -15,12 +16,10 @@ const Controls = () => {
       <OrbitControls
           args={[camera, gl.domElement]}
           ref={orbitRef}
-          minDistance={10}
-          maxDistance={10}
-          maxAzimuthAngle={.105}
-          minAzimuthAngle={-.105}
-          maxPolarAngle={1.75}
-          minPolarAngle={1.4}
+          minDistance={30}
+          maxDistance={30}
+          maxPolarAngle={1}
+          minPolarAngle={1}
           />
   )
 }
@@ -44,10 +43,16 @@ export default function Home() {
               <pointLight position={[-30, 10, -30]} />
               <pointLight position={[10, 10, 10]} />
               <pointLight position={[30, 10, 30]} />
+              <group>
+              <Album
+
+                     />
               <Mask
                 position={[0,0,0]}
                 rotation={[0,0,0]}
               />
+              </group>
+
             </Canvas>
           </Suspense>
       </div>

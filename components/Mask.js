@@ -19,23 +19,28 @@ export default function Mask({ ...props }) {
     setRotation(Number(!Rotation))
     console.log(Rotation,spring.z)
   }
-  const { nodes, materials } = useGLTF('static/Mask/scene.gltf');
-  const  spring  = useSpring({
-    z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI],
-    config:{ mass: .85, tension: 190, friction: 10 }
-  });
+  // const  { scene } = useGLTF('static/Mask/scene.gltf');
+  // const  spring  = useSpring({
+  //   z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI],
+  //   config:{ mass: .85, tension: 190, friction: 10 }
+  // });
  
 
-  return (
-    <group  rotateZ={spring.z}  dispose={null} scale={2} >
-      <a.group onClick={changeRotation}  rotation={spring.z} position={[0,0,0]} scale={2}>
-        <mesh  geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} />
-      </a.group>
-    </group>
-  )
+  // return (
+    
+  //   <group  rotateZ={spring.z}  dispose={null} scale={2} >
+  //     <a.group onClick={changeRotation}  rotation={spring.z} position={[0,0,0]} scale={2}>
+  //       <mesh  geometry={nodes.Object_2.geometry} material={materials.defaultMat} />
+  //       <mesh geometry={nodes.Object_3.geometry} material={materials.defaultMat} />
+  //       {/* <mesh geometry={nodes.Object_4.geometry} material={materials.defaultMat} /> */}
+  //       {/* <mesh geometry={nodes.Object_5.geometry} material={materials.defaultMat} /> */}
+  //     </a.group>
+  //   </group>
+  // )
+  const { scene } = useGLTF('static/Mask/scene.gltf')
+  
+  return <primitive object={scene} position={[0,-25,0]} rotation={[0,0,0]} scale={6}/>
+
 }
 
 useGLTF.preload('static/Mask/scene.gltf')

@@ -1,11 +1,11 @@
 Model Information:
-* title:	Japanese Mask
-* source:	https://sketchfab.com/3d-models/japanese-mask-9a3972e41f4646129245c6acd5a19b71
-* author:	Romain Vaysse (https://sketchfab.com/redshell)
+* title:	Gato ying yang obj
+* source:	https://sketchfab.com/3d-models/gato-ying-yang-obj-599d69cd2ce440daa2e444cfc7da5340
+* author:	leonleonar (https://sketchfab.com/leonleonar)
 
 Model License:
-* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
-* requirements:	Author must be credited. No commercial use.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Japanese Mask" (https://sketchfab.com/3d-models/japanese-mask-9a3972e41f4646129245c6acd5a19b71) by Romain Vaysse (https://sketchfab.com/redshell) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+This work is based on "Gato ying yang obj" (https://sketchfab.com/3d-models/gato-ying-yang-obj-599d69cd2ce440daa2e444cfc7da5340) by leonleonar (https://sketchfab.com/leonleonar) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

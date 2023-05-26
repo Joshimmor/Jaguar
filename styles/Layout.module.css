@@ -11,6 +11,7 @@
 padding: 5%;
 display: inline-flex;
 background-color: white;
+z-index: 8;
 }
 .Footer{
     bottom: 0;
@@ -27,6 +28,7 @@ background-color: white;
 color: inherit;
 text-decoration: none;
 font-family: 'Roboto', sans-serif;
+z-index: 8;
 }
 .dot{
     margin: auto;
@@ -36,4 +38,11 @@ font-family: 'Roboto', sans-serif;
     background-color: #e76a24;
     -webkit-box-shadow: 5px 5px 11px 6px rgba(0, 0, 0, 0.06); 
   box-shadow: 5px 5px 11px 6px rgba(0, 0, 0, 0.128);
+  }
+  .background{
+        width:100vw;
+        height:100vh;
+        padding: 0;
+        margin:0;
+        /* background-image: url('../styles/Assets/3.jpg'); */
   }
