@@ -7,7 +7,6 @@ import { Suspense } from 'react';
 // import Jaguar  from "../components/Jaguar"
 import Mask from '../components/Mask';
 import Loader from "../components/loader"
-import SelectionBar from '../components/selectionBar';
 import { Album } from '../components/Album_cover';
 const Controls = () => { 
   const orbitRef = useRef();
