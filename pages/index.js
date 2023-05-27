@@ -1,5 +1,4 @@
 import React, {useRef,useState} from 'react';
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { OrbitControls,DeviceOrientationControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree} from '@react-three/fiber';
