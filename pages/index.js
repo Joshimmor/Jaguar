@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import Mask from '../components/Mask';
 import Loader from "../components/loader"
 import { Album } from '../components/Album_cover';
+// import { JapaneseForest } from '../components/Japanese_forest';
 const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
@@ -18,6 +19,7 @@ const Controls = () => {
           maxDistance={30}
           maxPolarAngle={1}
           minPolarAngle={1}
+          enableZoom={false}
           />
   )
 }
@@ -36,12 +38,13 @@ export default function Home() {
           <Suspense fallback={<Loader/>}>
             <Canvas
         className={styles.canvas}>
-              <Controls/>
+              <Controls />
               {/* <DeviceOrientationControls/> */}
-              <pointLight position={[-30, 10, -30]} />
-              <pointLight position={[10, 10, 10]} />
-              <pointLight position={[30, 10, 30]} />
+              <pointLight position={[-30, 10, -30]} intensity={1} />
+              <pointLight position={[10, 10, 10]}intensity={1}  />
+              <pointLight position={[30, 10, 30]} intensity={1} />
               <group>
+
               <Album
 
                      />
@@ -49,6 +52,7 @@ export default function Home() {
                 position={[0,0,0]}
                 rotation={[0,0,0]}
               />
+              {/* <JapaneseForest position={[0,-4,0]}/> */}
               </group>
 
             </Canvas>
