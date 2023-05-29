@@ -7,42 +7,84 @@ Source: https://sketchfab.com/3d-models/nf-mansion-album-cover-1710f5130c24474aa
 Title: NF Mansion Album cover
 */
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { a } from "@react-spring/three";
+import { useSpring } from "@react-spring/core";
 export function Album(props) {
+  useEffect(()=>{
+    setAPosition(0)
+    setBPosition(0)
+    setCPosition(0)
+    setDPosition(0)
+  },[])
+  let [aPosition,setAPosition] = useState(1);
+  let [bPosition,setBPosition] = useState(1);
+  let [cPosition,setCPosition] = useState(1);
+  let [dPosition,setDPosition] = useState(1);
   const { nodes, materials } = useGLTF('static/album_cover.glb')
   const hello = () =>{
     console.log("hello world")
   }
+   const changeAPosition = () =>{
+    setAPosition(Number(!aPosition))
+  }
+
+  const changeBPosition = () =>{
+  setBPosition(Number(!bPosition))
+  }
+
+  const changeCPosition = () =>{
+  setCPosition(Number(!cPosition))
+  }
+  
+  const changeDPosition = () =>{
+  setDPosition(Number(!dPosition))
+  }
+    const  springA  = useSpring({
+    z: aPosition? [0,14,-22 ]:[ 0,5,-15 ],
+    config:{ mass: .85, tension: 190, friction: 10 }
+  })
+  const  springB  = useSpring({
+    z: bPosition? [0,14,22 ]:[ 0,5,15 ],
+    config:{ mass: .85, tension: 190, friction: 10 }
+  })
+    const  springC  = useSpring({
+    z: cPosition? [-22,15,0 ]:[-15,5,0],
+    config:{ mass: .85, tension: 190, friction: 10 }
+  })
+    const  springD  = useSpring({
+    z: dPosition? [22,15,0 ]:[15,5,0],
+    config:{ mass: .85, tension: 190, friction: 10 }
+  })
   return (
     <>
     <group  {...props} dispose={null} >
-      <a.group onClick={hello} rotation={[Math.PI /1.5,Math.PI , 0]} position={[0,5,-15]} scale={.03}>
+      <a.group onClick={changeAPosition} rotation={[Math.PI /1.5,Math.PI , 0]} position={springA.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
       </a.group>
     </group>
     <group {...props} dispose={null} >
-      <group rotation={[-Math.PI /1.5, 0, 0]} position={[0,5,15]} scale={.03}>
+      <a.group  onClick={changeBPosition} rotation={[-Math.PI /1.5, 0, 0]} position={springB.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
-      </group>
+      </a.group>
     </group>
     <group {...props} dispose={null} >
-      <group rotation={[-Math.PI /2, Math.PI /5 , -Math.PI /2]} position={[-15,5,0]} scale={.03}>
+      <a.group onClick={changeCPosition} rotation={[-Math.PI /2, Math.PI /5 , -Math.PI /2]} position={springC.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
-      </group>
+      </a.group>
     </group>
     <group {...props} dispose={null} >
-      <group rotation={[-Math.PI /2, -Math.PI /5 , Math.PI /2]} position={[15,5,0]} scale={.03}>
+      <a.group onClick={changeDPosition} rotation={[-Math.PI /2, -Math.PI /5 , Math.PI /2]} position={springD.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
-      </group>
+      </a.group>
     </group>
     </>
   )
 }
 
-useGLTF.preload('/album_cover.glb')
+useGLTF.preload('static/album_cover.glb')

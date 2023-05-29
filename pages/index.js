@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import Mask from '../components/Mask';
 import Loader from "../components/loader"
 import { Album } from '../components/Album_cover';
-import { Mountain } from '../components/Mountain';
+// import { Mountain } from '../components/Mountain';
 // import { JapaneseForest } from '../components/Japanese_forest';
 const Controls = () => { 
   const orbitRef = useRef();
@@ -42,20 +42,21 @@ export default function Home() {
         className={styles.canvas}>
               <Controls />
               {/* <DeviceOrientationControls/> */}
-              <pointLight position={[-30, 10, -30]} intensity={1} />
-              <pointLight position={[10, 10, 10]}intensity={1}  />
-              <pointLight position={[30, 10, 30]} intensity={1} />
+              <pointLight position={[-30, 10, -30]} intensity={3} />
+              <pointLight position={[10, 10, 10]}intensity={3}  />
+              <pointLight position={[30, 10, 30]} intensity={3} />
               <group>
 
               <Album
 
                      />
               <Mask
+          
                 position={[0,0,0]}
                 rotation={[0,0,0]}
               />
               {/* <JapaneseForest position={[0,-4,0]}/> */}
-              <Mountain position={[10,-15,0]}/>
+              {/* <Mountain position={[10,-10,0]}/> */}
               </group>
 
             </Canvas>
