@@ -8,16 +8,15 @@ export default function MusicPlayer({ProjectName, visible}) {
   },[visible])
     const TransRef = useSpringRef()
       const trans = useTransition(visible,{
-        ref: TransRef,
-        from: { opacity: 0 ,y:-200 },
+        from: { opacity: 0 ,y:200 },
         enter: {  y:0,opacity: 1 },
-        leave: { y:-200 ,opacity: 0},
+        leave: { y:200 ,opacity: 0},
         config: { mass: .85, tension: 190, friction: 15 }
       })
   return (
     <>
         {trans((style,item) =>
-            item ? <animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div> : ""
+            item?<animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div>:<></>
         )}
     </>
   )
