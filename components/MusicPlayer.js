@@ -4,9 +4,9 @@ import styles from '../styles/Projects.module.css'
 
 export default function MusicPlayer({ProjectName, visible}) {
       const trans = useTransition(visible,{
-        from: { opacity: 0 ,transform: "translateY(-200px)" },
-        enter: { transform: "translateY(0px)",opacity: 1 },
-        leave: { transform: "translateY(-200px)" ,opacity: 0},
+        from: { opacity: 0 ,y:-200 },
+        enter: {  y:0,opacity: 1 },
+        leave: { y:-200 ,opacity: 0},
         config: { mass: .85, tension: 190, friction: 15 }
       })
   return (
