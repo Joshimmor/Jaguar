@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/storage": "^6.10.1",
     "@react-spring/three": "^9.4.5",
     "@react-three/drei": "^9.14.3",
     "@react-three/fiber": "^8.0.27",
