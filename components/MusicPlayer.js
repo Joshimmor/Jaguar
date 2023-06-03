@@ -2,11 +2,8 @@ import React, { useState,useRef,useEffect } from 'react'
 import {  animated, useSpringRef, useTransition } from '@react-spring/web'
 import styles from '../styles/Projects.module.css'
 
-export default function MusicPlayer({ProjectName, visible}) {
-  useEffect(()=>{
-    TransRef.start()
-  },[visible])
-    const TransRef = useSpringRef()
+export default function MusicPlayer({ProjectName,visible = false}) {
+
       const trans = useTransition(visible,{
         from: { opacity: 0 ,y:200 },
         enter: {  y:0,opacity: 1 },
@@ -15,9 +12,9 @@ export default function MusicPlayer({ProjectName, visible}) {
       })
   return (
     <>
-        {trans((style,item) =>
-            item?<animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div>:<></>
-        )}
+      { trans((style,item) => 
+         item ? <animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div>:""
+           )}
     </>
   )
 }

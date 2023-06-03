@@ -3,7 +3,7 @@ import styles from '../../styles/Projects.module.css'
 import MusicPlayer from '../../components/MusicPlayer';
 import { useSpring, animated } from '@react-spring/web'
 export default function index() {
-    const [player,setPlayers] = useState([0,0,0])
+    const [player,setPlayers] = useState([false,false,false])
     const displayPlayer = (index) =>{
         let newVal = [0,0,0]
         for(let i = 0; i < player.length; i++){
@@ -22,15 +22,15 @@ export default function index() {
         <div className={styles.background}>
             <section className={styles.projects}>
                 <animated.span onClick={()=>displayPlayer(0)} style={props} className={styles.dot}></animated.span>
-                <MusicPlayer visible={player[0]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={1} visible={player[0]}ProjectName={"YingYang"}/>
             </section>
             <section className={styles.projects}>
                 <span onClick={()=>displayPlayer(1)} className={styles.dot}></span>
-                <MusicPlayer visible={player[1]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={12} visible={player[1]}ProjectName={"YingYang"}/>
             </section>
             <section className={styles.projects}>
                 <span onClick={()=>displayPlayer(2)}  className={styles.dot}></span>
-                <MusicPlayer visible={player[2]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={3} visible={player[2]}ProjectName={"YingYang"}/>
             </section>
         </div>
 
