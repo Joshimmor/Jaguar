@@ -1,9 +1,14 @@
 import React, { useState,useRef,useEffect } from 'react'
-import {  animated, useTransition } from '@react-spring/web'
+import {  animated, useSpringRef, useTransition } from '@react-spring/web'
 import styles from '../styles/Projects.module.css'
 
 export default function MusicPlayer({ProjectName, visible}) {
+  useEffect(()=>{
+    TransRef.start()
+  },[visible])
+    const TransRef = useSpringRef()
       const trans = useTransition(visible,{
+        ref: TransRef,
         from: { opacity: 0 ,y:-200 },
         enter: {  y:0,opacity: 1 },
         leave: { y:-200 ,opacity: 0},
