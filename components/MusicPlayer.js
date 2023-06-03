@@ -12,7 +12,7 @@ export default function MusicPlayer({ProjectName, visible}) {
   return (
     <>
         {trans((style,item) =>
-            item ? <animated.div className={styles.player} style={style} ><Songs ProjectName={ProjectName}/></animated.div> : ""
+            item ? <animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div> : ""
         )}
     </>
   )
