@@ -22,6 +22,7 @@ const Controls = () => {
           minPolarAngle={1}
           enableZoom={false}
           enablePan={false}
+          rotateSpeed={.3}
           />
   )
 }

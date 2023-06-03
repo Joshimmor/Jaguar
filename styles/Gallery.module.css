@@ -1,0 +1,37 @@
+.background{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    /* background-image:  url('../styles/Assets/gallery-background.svg');
+    background-size:contain;
+    background-repeat: repeat; */
+    background-color:  #73e2fb;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.backdrop{
+   
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.att{
+    display: none;
+}
+.frame{
+    width: 30vw;
+    height: 20vh;
+    background-color: grey;
+}
+.frame_title{
+    color:rgb(237, 168, 40);
+}

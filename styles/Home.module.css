@@ -8,7 +8,7 @@
   height:100vh;
   padding: 0;
   margin:0 auto;
-  background-color:   rgb(195, 239, 244);
+  background-color:  #73e2fb;
   position: absolute;
 }
 @media (max-width < 600) {
