@@ -1,20 +1,37 @@
 import React, { useState,useRef,useEffect } from 'react'
 import {  animated, useSpringRef, useTransition } from '@react-spring/web'
 import styles from '../styles/Projects.module.css'
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function MusicPlayer({ProjectName,visible}) {
-  const [shouldRender, setRender] = useState(visible);
+  const [shouldRender, setRender] = useState(false);
   useEffect(() => {
     if (visible){ setRender(true);}
     else{setRender(false)}
   }, [visible]);
-
-  const onAnimationEnd = () => {
-    if (!visible) setRender(false);
+  const defaultState = {
+    opacity: 0,
+    transform:"translateY(200px)"
   };
+
   // style={{ animation: {show ? styles.fadeIn : styles.fadeOut}}
   return (
- shouldRender && ( <div    onAnimationEnd={onAnimationEnd} className={styles.player} ><Songs ProjectName={ProjectName}/></div>)
+    <AnimatePresence>
+      { shouldRender && (
+         <motion.div   
+             initial={defaultState}
+             exit={defaultState}
+             animate={{
+              opacity: 1,
+              boxShadow: "1px 1px 10px rgba(0, 0, 0, 0.3)",
+              transform:"translateY(0px)"
+            }}
+              className={styles.player}
+            >
+            <Songs ProjectName={ProjectName}/>
+          </motion.div>)}
+    </AnimatePresence>
+
   )
 }
 

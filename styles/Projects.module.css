@@ -22,9 +22,15 @@
     width: 30vh;
     background-color:rgb(237, 168, 40);
     border-radius: 50%;
+
     display: inline-block;
     filter: drop-shadow(5px 8px 14px #00000078);
     z-index: 1;
+   
+  }
+  .m_player{
+    
+    margin-top: 10px;
   }
   .playButton {
     height: 2vh;
@@ -36,8 +42,6 @@
     z-index: 1;
   }
   .player{
-    animation-duration: 350ms;
-    animation-name: fadeIn;
     margin-top: 20px;
     padding: 20px;
     z-index: 0;
@@ -46,17 +50,7 @@
     background-color: rgba(65, 65, 68, 0.355);
     border-radius: 5px;
   }
-  .hidePlayer{
-    animation-duration: 300ms;
-    animation-name: fadeOut;
-    margin-top: 20px;
-    padding: 20px;
-    z-index: 0;
-    width: 70vw;
-    height: fit-content;
-    background-color: rgba(65, 65, 68, 0.355);
-    border-radius: 5px;
-  }
+
   .playback {
     color: #56AEFF;
   }
@@ -232,24 +226,3 @@
   .selectedTrack{
     color: rgb(237, 168, 40,1);
   }
-  @keyframes fadeIn {
-  0% {
-    transform: translateY(200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(200px);
-    opacity: 0;
-  }
-
-}

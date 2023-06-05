@@ -14,6 +14,7 @@ export function Diorama(props) {
   useEffect(()=>{
     actions.SunCycle.play()
     actions.Walk.play()
+    console.log(actions)
   },[actions])
   return (
     <group ref={group} {...props} dispose={null}>
