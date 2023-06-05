@@ -2,20 +2,19 @@ import React, { useState,useRef,useEffect } from 'react'
 import {  animated, useSpringRef, useTransition } from '@react-spring/web'
 import styles from '../styles/Projects.module.css'
 
-export default function MusicPlayer({ProjectName,visible = false}) {
+export default function MusicPlayer({ProjectName,visible}) {
+  const [shouldRender, setRender] = useState(visible);
+  useEffect(() => {
+    if (visible){ setRender(true);}
+    else{setRender(false)}
+  }, [visible]);
 
-      const trans = useTransition(visible,{
-        from: { opacity: 0 ,y:200 },
-        enter: {  y:0,opacity: 1 },
-        leave: { y:200 ,opacity: 0},
-        config: { mass: .85, tension: 190, friction: 15 }
-      })
+  const onAnimationEnd = () => {
+    if (!visible) setRender(false);
+  };
+  // style={{ animation: {show ? styles.fadeIn : styles.fadeOut}}
   return (
-    <>
-      { trans((style,item) => 
-         item ? <animated.div style={style} className={styles.player} ><Songs ProjectName={ProjectName}/></animated.div>:""
-           )}
-    </>
+ shouldRender && ( <div    onAnimationEnd={onAnimationEnd} className={styles.player} ><Songs ProjectName={ProjectName}/></div>)
   )
 }
 
@@ -79,8 +78,9 @@ useEffect(() => {
   const seconds = Math.floor(audioPlayer.current.duration);
   setDuration(seconds);
   progressBar.current.max = seconds;
+  progressBar.current.value = 0
   setIsPlaying(true)
-}, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+}, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState, props.link]);
 
 
 //functionality 

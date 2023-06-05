@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import Mask from '../components/Mask';
 import Loader from "../components/loader"
 import { Album } from '../components/Album_cover';
+import {Diorama} from "../components/Diorama"
 // import { Mountain } from '../components/Mountain';
 // import { JapaneseForest } from '../components/Japanese_forest';
 const Controls = () => { 
@@ -22,7 +23,7 @@ const Controls = () => {
           minPolarAngle={1}
           enableZoom={false}
           enablePan={false}
-          rotateSpeed={.3}
+          rotateSpeed={.6}
           />
   )
 }
@@ -56,6 +57,7 @@ export default function Home() {
                 position={[0,0,0]}
                 rotation={[0,0,0]}
               />
+              <Diorama position={[0,0,0]} scale={3}/>
               {/* <JapaneseForest position={[0,-4,0]}/> */}
               {/* <Mountain position={[10,-10,0]}/> */}
               </group>

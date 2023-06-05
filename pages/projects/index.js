@@ -22,15 +22,15 @@ export default function index() {
         <div className={styles.background}>
             <section className={styles.projects}>
                 <animated.span onClick={()=>displayPlayer(0)} style={props} className={styles.dot}></animated.span>
-                <MusicPlayer key={1} visible={player[0]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={1} visible={player[0]} ProjectName={"YingYang"}/>
             </section>
             <section className={styles.projects}>
                 <span onClick={()=>displayPlayer(1)} className={styles.dot}></span>
-                <MusicPlayer key={12} visible={player[1]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={12} visible={player[1]} ProjectName={"YingYang"}/>
             </section>
             <section className={styles.projects}>
                 <span onClick={()=>displayPlayer(2)}  className={styles.dot}></span>
-                <MusicPlayer key={3} visible={player[2]}ProjectName={"YingYang"}/>
+                <MusicPlayer key={3} visible={player[2]} ProjectName={"YingYang"}/>
             </section>
         </div>
 

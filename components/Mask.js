@@ -39,7 +39,7 @@ export default function Mask({ ...props }) {
   // )
   const { scene } = useGLTF('static/Mask/scene.gltf')
   
-  return <primitive  object={scene} position={[0,-25,0]} rotation={[0,0,0]} scale={6}/>
+  return <primitive  object={scene} position={[0,-20,0]} rotation={[0,0,0]} scale={6}/>
 
 }
 
