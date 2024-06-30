@@ -42,43 +42,43 @@ export function Album(props) {
   setDPosition(Number(!dPosition))
   }
     const  springA  = useSpring({
-    z: aPosition? [0,30,-15 ]:[ 0,5,-15 ],
+    z: aPosition? [0,10,-15 ]:[ 0,5,-15 ],
     config:{ mass: .85, tension: 190, friction: 15 }
   })
   const  springB  = useSpring({
-    z: bPosition? [0,30,15 ]:[ 0,5,15 ],
+    z: bPosition? [0,10,15 ]:[ 0,5,15 ],
     config:{ mass: .85, tension: 190, friction: 15 }
   })
     const  springC  = useSpring({
-    z: cPosition? [-15,30,0 ]:[-15,5,0],
+    z: cPosition? [-15,10,0 ]:[-15,5,0],
     config:{ mass: .85, tension: 190, friction: 15}
   })
     const  springD  = useSpring({
-    z: dPosition? [15,30,0 ]:[15,5,0],
+    z: dPosition? [15,10,0 ]:[15,5,0],
     config:{ mass: .85, tension: 190, friction: 15 }
   })
   return (
     <>
     <group  {...props} dispose={null} >
-      <a.group  rotation={[Math.PI /1.5,Math.PI , 0]} position={springA.z} scale={.03}>
+      <a.group  onClick={changeAPosition} rotation={[Math.PI /1.5,Math.PI , 0]} position={springA.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
       </a.group>
     </group>
     <group {...props} dispose={null} >
-      <a.group   rotation={[-Math.PI /1.5, 0, 0]} position={springB.z} scale={.03}>
+      <a.group  onClick={changeBPosition} rotation={[-Math.PI /1.5, 0, 0]} position={springB.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
       </a.group>
     </group>
     <group {...props} dispose={null} >
-      <a.group  rotation={[-Math.PI /2, Math.PI /5 , -Math.PI /2]} position={springC.z} scale={.03}>
+      <a.group  onClick={changeCPosition} rotation={[-Math.PI /2, Math.PI /5 , -Math.PI /2]} position={springC.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
       </a.group>
     </group>
     <group {...props} dispose={null} >
-      <a.group rotation={[-Math.PI /2, -Math.PI /5 , Math.PI /2]} position={springD.z} scale={.03}>
+      <a.group onClick={changeDPosition} rotation={[-Math.PI /2, -Math.PI /5 , Math.PI /2]} position={springD.z} scale={.03}>
         <mesh geometry={nodes.Object_2.geometry} material={materials.color_14541540} />
         <mesh geometry={nodes.Object_3.geometry} material={materials.color_2829873} />
       </a.group>

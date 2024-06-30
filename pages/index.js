@@ -8,8 +8,10 @@ import Mask from '../components/Mask';
 import Loader from "../components/loader"
 import { Album } from '../components/Album_cover';
 import {Diorama} from "../components/Diorama"
-// import { Mountain } from '../components/Mountain';
-// import { JapaneseForest } from '../components/Japanese_forest';
+import { Mountain } from '../components/Mountain';
+import { JapaneseForest } from '../components/Japanese_forest';
+import { Forest } from '../components/Forest';
+import { Fire } from '../components/Fire';
 const Controls = () => { 
   const orbitRef = useRef();
   const {camera, gl} = useThree();
@@ -44,9 +46,12 @@ export default function Home() {
         className={styles.canvas}>
               <Controls />
               {/* <DeviceOrientationControls/> */}
-              <pointLight position={[-30, 10, -30]} intensity={3} />
-              <pointLight position={[10, 10, 10]}intensity={3}  />
-              <pointLight position={[30, 10, 30]} intensity={3} />
+              {/* <pointLight position={[-30, 10, -30]} intensity={.5} />
+              <pointLight position={[10, 10, 10]}intensity={.5}  />
+              <pointLight position={[30, 10, 30]} intensity={.5} /> */}
+              <pointLight position={[10, 10, 10]}intensity={.3}  />
+               <pointLight color="#FF4500" position={[22.5,2,6.15]} intensity={.5} />
+               <pointLight color="#FF4500"  position={[-22.5,2,6.15]} intensity={.5} />
               <group>
 
               <Album
@@ -57,9 +62,20 @@ export default function Home() {
                 position={[0,0,0]}
                 rotation={[0,0,0]}
               />
-              <Diorama position={[0,0,0]} scale={3}/>
-              {/* <JapaneseForest position={[0,-4,0]}/> */}
+              {/* <Diorama position={[0,0,0]} scale={3}/> */}
+              <JapaneseForest position={[0,-4,0]}/>
               {/* <Mountain position={[10,-10,0]}/> */}
+              {/* <Forest position={[0,-4,0]}/> */}
+              <Fire
+                              position={[22.5,2,6.15]}
+                              rotation={[0,0,0]}
+                              scale={[.5,.5,.5]}
+              />
+                            <Fire
+                              position={[-22.5,2,6.15]}
+                              rotation={[0,0,0]}
+                              scale={[.5,.5,.5]}
+              />
               </group>
 
             </Canvas>

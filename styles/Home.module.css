@@ -8,7 +8,8 @@
   height:100vh;
   padding: 0;
   margin:0 auto;
-  background-color:  #73e2fb;
+  background: rgb(100, 100, 100);
+background: linear-gradient(0deg, rgb(9, 112, 180) 0%, rgb(4, 1, 31) 85%, rgb(58, 4, 57) 100%);
   position: absolute;
 }
 @media (max-width < 600) {

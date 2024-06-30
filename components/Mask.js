@@ -6,7 +6,7 @@ source: https://sketchfab.com/3d-models/japanese-mask-9a3972e41f4646129245c6acd5
 title: Japanese Mask
 */
 
-import React, { useRef,useState } from 'react'
+import React, { useEffect, useRef,useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useSpring } from "@react-spring/core";
 import { a } from "@react-spring/three";
@@ -20,11 +20,19 @@ export default function Mask({ ...props }) {
     console.log(Rotation,spring.z)
   }
   // const  { scene } = useGLTF('static/Mask/scene.gltf');
-  // const  spring  = useSpring({
-  //   z: Rotation? [Math.PI/2,-Math.PI,0 ]:[ Math.PI/2,-Math.PI,Math.PI],
-  //   config:{ mass: .85, tension: 190, friction: 10 }
-  // });
- 
+
+  const spring  = useSpring({
+    from: { z: [0, -15, 0] },
+    to: async (next, cancel) => {
+      while (true) {
+        await next({ z: [0, -20, 0] });
+        await next({ z: [0, -19, 0] });
+      }
+    },
+    config: { mass: 0.95, tension: 190, friction: 300, duration: 1200 },
+    // delay: 500,
+  });
+
 
   // return (
     
@@ -39,7 +47,7 @@ export default function Mask({ ...props }) {
   // )
   const { scene } = useGLTF('static/Mask/scene.gltf')
   
-  return <primitive  object={scene} position={[0,-20,0]} rotation={[0,0,0]} scale={6}/>
+  return <a.primitive  object={scene} position={spring.z} rotation={[0,0,0]} scale={6}/>
 
 }
 
