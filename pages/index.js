@@ -46,12 +46,13 @@ export default function Home() {
         className={styles.canvas}>
               <Controls />
               {/* <DeviceOrientationControls/> */}
-              {/* <pointLight position={[-30, 10, -30]} intensity={.5} />
-              <pointLight position={[10, 10, 10]}intensity={.5}  />
-              <pointLight position={[30, 10, 30]} intensity={.5} /> */}
-              <pointLight position={[10, 10, 10]}intensity={.3}  />
-               <pointLight color="#FF4500" position={[22.5,2,6.15]} intensity={.5} />
-               <pointLight color="#FF4500"  position={[-22.5,2,6.15]} intensity={.5} />
+               <pointLight position={[-30, 10, -30]} intensity={.1} />
+               <pointLight position={[10, 10, 10]}intensity={.1}  />
+               <pointLight position={[30, 10, 30]} intensity={.1} />
+               <pointLight color="#FF4500" rotation={[0,Math.PI/2,0]} position={[22.5,2,6.15]} intensity={.1} />
+               <pointLight color="#FF4500" rotation={[0,Math.PI/2,0]}  position={[-22.5,2,6.15]} intensity={.1} />
+               <pointLight color="#FF4500" rotation={[0,Math.PI/2,0]} position={[22,8,-27.5]} intensity={.1} />
+               <pointLight color="#FF4500"  rotation={[0,Math.PI/2,0]} position={[-22,8,-27.5]} intensity={.1} />
               <group>
 
               <Album
@@ -71,8 +72,18 @@ export default function Home() {
                               rotation={[0,0,0]}
                               scale={[.5,.5,.5]}
               />
-                            <Fire
+              <Fire
                               position={[-22.5,2,6.15]}
+                              rotation={[0,0,0]}
+                              scale={[.5,.5,.5]}
+              />
+              <Fire
+                              position={[-22,8,-27.5]}
+                              rotation={[0,0,0]}
+                              scale={[.5,.5,.5]}
+              />
+              <Fire
+                              position={[22,8,-27.5]}
                               rotation={[0,0,0]}
                               scale={[.5,.5,.5]}
               />
