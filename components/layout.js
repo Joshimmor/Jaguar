@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <>
       <main className={styles.content}>{children}</main>
     <div className={styles.Footer}>
-      <Link href='/' className={styles.FooterLinks}>JASON TIGER EATER</Link>
+      
     </div>
     </>
   )

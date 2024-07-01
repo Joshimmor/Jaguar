@@ -8,8 +8,9 @@
   height:100vh;
   padding: 0;
   margin:0 auto;
-  background: rgb(100, 100, 100);
-background: linear-gradient(0deg, rgb(9, 112, 180) 0%, rgb(4, 1, 31) 85%, rgb(58, 4, 57) 100%);
+  background: rgb(0, 0, 0);
+  overflow-y:hidden ;
+/* background: linear-gradient(0deg, rgb(9, 112, 180) 0%, rgb(4, 1, 31) 85%, rgb(58, 4, 57) 100%); */
   position: absolute;
 }
 @media (max-width < 600) {
@@ -23,7 +24,29 @@ background: linear-gradient(0deg, rgb(9, 112, 180) 0%, rgb(4, 1, 31) 85%, rgb(58
   }
 }
 
-
 .canvas{
  z-index: 6;
+}
+.hide {
+   top: 100%;
+   opacity: 0;
+}
+.discription{
+  z-index: 10;
+  padding: 10px ;
+  width: 100vw;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top : 40%;
+  opacity: 1;
+  overflow-y: scroll;
+  transition: all 1s ease 0s;
+}
+.discription > h1 {
+  color: white  ;
+}
+.discription > p {
+  color: white  ;
 }
