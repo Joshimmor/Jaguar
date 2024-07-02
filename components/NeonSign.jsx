@@ -71,14 +71,14 @@ export function NeonSign({setSelected,selected,...props}) {
         <mesh geometry={nodes.Object_5.geometry} material={materials.Material} />
         <mesh geometry={nodes.Object_6.geometry} material={materials['Material.002']} />
       </a.group>
-      <a.group onClick={()=>setSelected("Home")} rotation={[-Math.PI /1.5,-1/8 , 1/5]} position={springB.z} scale={5.377}>
+      <a.group onClick={()=>setSelected("Project")} rotation={[-Math.PI /1.5,-1/8 , 1/5]} position={springB.z} scale={5.377}>
         <mesh geometry={nodes.Object_2.geometry} material={materials['Material.003']} />
         <mesh geometry={nodes.Object_3.geometry} material={materials['Material.003']} />
         <lineSegments geometry={nodes.Object_4.geometry} material={materials.Material} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.Material} />
         <mesh geometry={nodes.Object_6.geometry} material={materials['Material.002']} />
       </a.group>
-      <a.group onClick={()=>setSelected("Home")} rotation={[Math.PI /2.18,Math.PI/1.2 , Math.PI/1.8]} position={springC.z} scale={5.377}>
+      <a.group onClick={()=>setSelected("Contact")} rotation={[Math.PI /2.18,Math.PI/1.2 , Math.PI/1.8]} position={springC.z} scale={5.377}>
         <mesh geometry={nodes.Object_2.geometry} material={materials['Material.003']} />
         <mesh geometry={nodes.Object_3.geometry} material={materials['Material.003']} />
         <lineSegments geometry={nodes.Object_4.geometry} material={materials.Material} />
